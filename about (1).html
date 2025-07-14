@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About & Contact | Axora</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+  
+
+    .about {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .about img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .about h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #302b63;
+    }
+
+    .about p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    .benefits {
+      margin: 30px 0;
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .benefits li {
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact h3 {
+      margin-bottom: 20px;
+      color: #302b63;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      background-color: #fbbc05;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #f5a623;
+    }
+
+  
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="position: fixed; width: 100%; height: 70px;">
+    <h1 style="text-align: right; margin-bottom: -18px; padding-bottom: -0px; color: yellow;">Axora</h1>
+       <div class="toggle-container">
+    <div class="toggle-switch" id="theme-toggle">
+      <div class="toggle-circle"></div>
+  <span class="icon sun">🌞</span>
+  <span class="icon moon">🌙</span>
+  <div class="toggle-circle"></div>
+
+    </div>
+  </div>
+    <!-- Menu Button -->
+<div id="menuIcon" class="menu-icon" onclick="openMenu()">☰</div>
+
+<!-- Sidebar Menu -->
+<div id="sidebarMenu" class="sidebar">
+  <div class="close-btn" onclick="closeMenu()">×</div>
+ <a href="index.html"> Home</a>
+ <a href="sensitivity.html"> Sensitivity</a>
+ <a href="tips.html"> Gaming Tips</a>
+ <a href="topup.html"> Top-Up</a>
+ <a href="mentorship.html"> Mentorship</a>
+ <a href="tournament.html"> Tournament</a>
+ <a href="account.html"> Accounts</a>
+ <a href="adverts.html"> Adverts</a>
+ <a href="blog.html"> Blog</a>
+ <a href="about.html"> About</a>
+</div>
+
+    <nav>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    <section class="about">
+      <img src="https://via.placeholder.com/800x300.png?text=Axora+Mentorship+Program" alt="About Axora">
+      <h2>Welcome to Axora</h2>
+      <p>At Axora, we help mobile gamers level up their skills, confidence, and results. Our mentorship is designed to help Free Fire and CODM players unlock their full potential through personalized guidance and expert strategies.</p>
+      
+      <h3 style="margin-top: 30px;">🔥 Benefits of Joining Axora Mentorship:</h3>
+      <ul class="benefits">
+        <li>✔ Personalized 1-on-1 training sessions</li>
+        <li>✔ Pro tips for better aim, sensitivity, and loadout</li>
+        <li>✔ Access to private mentorship groups</li>
+        <li>✔ Weekly scrims and custom room practice</li>
+        <li>✔ Sensitivity and playstyle setup guide</li>
+        <li>✔ In-game strategy breakdowns</li>
+        <li>✔ Early access to tournaments and giveaways</li>
+        <li>✔ Feedback on gameplay and mistakes</li>
+        <li>✔ Earn a verified badge on Axora</li>
+        <li>✔ Learn teamwork, communication & rush tactics</li>
+        <li>✔ Access to our premium dashboard & resources</li>
+        <li>✔ Play & grow under guidance of expert players</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h3>📩 Email Us</h3>
+      <form action="https://formspree.io/f/xrblzlpg" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" rows="5" placeholder="I want to register for mentorship..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Axora. Powering the next generation of mobile gamers.</p>
+  </footer>
+
+</body>
+<script src="script.js"></script>
+</html>

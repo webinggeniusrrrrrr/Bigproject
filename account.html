@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accounts for Sale | Axora</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header style="position: fixed; width: 100%; height: 70px;">
+    <h1 style="text-align: right; margin-bottom: -18px; padding-bottom: -0px; color: yellow;">Axora</h1>
+    <div class="toggle-container">
+      <div class="toggle-switch" id="theme-toggle">
+        <div class="toggle-circle"></div>
+        <span class="icon sun">🌞</span>
+        <span class="icon moon">🌙</span>
+        <div class="toggle-circle"></div>
+      </div>
+    </div>
+
+    <!-- Menu Button -->
+    <div id="menuIcon" class="menu-icon" onclick="openMenu()">☰</div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebarMenu" class="sidebar">
+      <div class="close-btn" onclick="closeMenu()">×</div>
+      <a href="index.html"> Home</a>
+      <a href="sensitivity.html"> Sensitivity</a>
+      <a href="tips.html"> Gaming Tips</a>
+      <a href="topup.html"> Top-Up</a>
+      <a href="mentorship.html"> Mentorship</a>
+      <a href="tournament.html"> Tournament</a>
+      <a href="account.html"> Accounts</a>
+      <a href="adverts.html"> Adverts</a>
+      <a href="blog.html"> Blog</a>
+      <a href="about.html"> About</a>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 90px;">
+    <h2 style="text-align: center;">Game Accounts for Sale</h2>
+    <p style="text-align: center;">Buy premium accounts from trusted sellers. Click "Buy Now" to contact admin for payment.</p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="account2.jpg" alt="Free Fire Account">
+        <h3 style="color: goldenrod;">Free-Fire</h3>
+        <p style="color: dimgrey;">Selling at a cheap price</p>
+        <p style="color: green;">Price: message admin</p>
+        <a href="https://t.me/Axora_Admin" class="btn" style="color: white; background-color: royalblue; border-radius: 6px; padding: 6px;">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <img src="account3.jpg" alt="Free Fire Premium">
+        <h3 style="color: goldenrod;">Free_Fire</h3>
+        <p style="color: green;">Price: message admin</p>
+        <a href="https://t.me/Axora_Admin" class="btn" style="color: white; background-color: royalblue; border-radius: 6px; padding: 6px;">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <img src="account1.jpg" alt="Efootball Account">
+        <h3 style="color: goldenrod;">Efootball - Legendary</h3>
+        <p style="color: dimgrey;">boost blisters</p>
+        <p style="color: green;">Price: message admin</p>
+        <a href="https://t.me/Axora_Admin" class="btn" style="color: white; background-color: royalblue; border-radius: 6px; padding: 6px;">Buy Now</a>
+      </div>
+    </div>
+
+    <p style="margin-top: 50px; text-align: center;">Want to sell your account? <a href="https://t.me/Axora_Admin" style="color: red;">Chat admin</a> to list it here.</p>
+  </main>
+
+  <footer style="margin-top: 30px; text-align: center;">
+    <p>&copy; 2025 Axora. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

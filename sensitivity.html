@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Sidebar Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="position: fixed; width: 100%; height: 70px;">
+    <h1 style="text-align: right; margin-bottom: -18px; padding-bottom: 0px; color: yellow;">Axora</h1>
+       <div class="toggle-container">
+    <div class="toggle-switch" id="theme-toggle">
+      <div class="toggle-circle"></div>
+  <span class="icon sun">🌞</span>
+  <span class="icon moon">🌙</span>
+  <div class="toggle-circle"></div>
+
+    </div>
+  </div>
+    <!-- Menu Button -->
+<div id="menuIcon" class="menu-icon" onclick="openMenu()">☰</div>
+
+<!-- Sidebar Menu -->
+<div id="sidebarMenu" class="sidebar">
+  <div class="close-btn" onclick="closeMenu()">×</div>
+   <a href="index.html"> Home</a>
+ <a href="sensitivity.html"> Sensitivity</a>
+ <a href="tips.html"> Gaming Tips</a>
+ <a href="topup.html"> Top-Up</a>
+ <a href="mentorship.html"> Mentorship</a>
+ <a href="tournament.html"> Tournament</a>
+ <a href="account.html"> Accounts</a>
+ <a href="adverts.html"> Adverts</a>
+ <a href="blog.html"> Blog</a>
+ <a href="about.html"> About</a>
+</div>
+
+    <nav>
+    </nav>
+  </header>
+<main class="container" style="margin-top: px;;">
+  <br> <br> <br>
+  <h2 style="text-align: center;">Free Sensitivity </h2>
+  <br><br>
+  <p style="color: red;">Fill the form below to get your custom Free Fire or CODM sensitivity settings.</p>
+
+  <form id="sensitivity-form">
+    <label>Device Name: <input type="text" id="device" required></label><br>
+    <label>Android Version:
+      <select id="android-version" required>
+        <option value="16">16</option>
+        <option value="15">15</option>
+        <option value="14">14</option>
+        <option value="13">13</option>
+        <option value="12">12</option>
+        <option value="11">11</option>
+        <option value="10">10</option>
+      </select>
+    </label><br>
+    <label>Game: <br>
+      <select id="game" required>
+        <option value="Free Fire">Free Fire</option>
+      </select>
+    </label><br>
+    <label>Gun Name: <input type="text" id="gun" required></label><br>
+    <label>Play Style:
+      <select id="style" required>
+        <option value="Headshot">Headshot</option>
+        <option value="Spamming">Spamming</option>
+        <option value="Body Shot">Body Shot</option>
+        <option value="Drag">Drag</option>
+        <option value="Sniping">Sniping</option>
+      </select>
+    </label><br>
+    <button type="submit">Generate Sensitivity</button>
+  </form>
+
+  <div id="result" class="card" style="display:none; margin-top: 20px; color: #ffffff; background: linear-gradient(135deg, #000000, #2c3e50, #000000);"></div>
+</main>
+
+<!-- JavaScript -->
+<script>
+  function openMenu() {
+    document.getElementById("sidebarMenu").style.width = "250px";
+    document.getElementById("menuIcon").classList.add("hide");
+  }
+
+  function closeMenu() {
+    document.getElementById("sidebarMenu").style.width = "0";
+    document.getElementById("menuIcon").classList.remove("hide");
+  }
+  
+  
+  const form = document.getElementById('sensitivity-form');
+  const resultDiv = document.getElementById('result');
+
+  const sensitivityData = {
+    "Free Fire": {
+      general: [128, 97, 173, 84, 199, 117, 144, 92, 183, 103, 159, 109, 80, 167, 197, 91, 134, 121, 186, 101],
+      redDot: [98, 139, 180, 115, 145, 131, 161, 87, 193, 169, 123, 108, 196, 82, 156, 88, 120, 178, 102, 133],
+      scope2x: [171, 126, 185, 89, 190, 106, 135, 100, 199, 151, 86, 129, 112, 147, 83, 198, 164, 143, 110, 105],
+      scope4x: [91, 173, 166, 150, 119, 132, 182, 96, 137, 93, 194, 122, 176, 104, 200, 95, 118, 157, 90, 184],
+      sniper: [116, 100, 193, 130, 192, 99, 189, 111, 85, 136, 181, 149, 187, 140, 172, 113, 94, 148, 170, 107],
+      freecamera: [160, 141, 95, 100, 190, 86, 117, 199, 143, 91, 172, 84, 109, 196, 93, 105, 121, 168, 98, 187]
+    },
+  };
+
+  function getRandomValue(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const game = document.getElementById('game').value;
+    const gun = document.getElementById('gun').value;
+    const style = document.getElementById('style').value;
+
+    let output = `<h3>${game} Sensitivity for ${gun} (${style} Style)</h3><ul>`;
+
+    if (game === "Free Fire") {
+      output += `
+        <li>General: ${getRandomValue(sensitivityData[game].general)}</li>
+        <li>Red Dot: ${getRandomValue(sensitivityData[game].redDot)}</li>
+        <li>2X Scope: ${getRandomValue(sensitivityData[game].scope2x)}</li>
+        <li>4X Scope: ${getRandomValue(sensitivityData[game].scope4x)}</li>
+        <li>Sniper: ${getRandomValue(sensitivityData[game].sniper)}</li>
+        <li>Free camera button: ${getRandomValue(sensitivityData[game].freecamera)}</li>
+      `;
+    } else if (game === "CODM") {
+      output += `
+        <li>Standard: ${getRandomValue(sensitivityData[game].standard)}</li>
+        <li>Tactical Scope: ${getRandomValue(sensitivityData[game].tactical)}</li>
+        <li>Sniper Scope: ${getRandomValue(sensitivityData[game].sniper)}</li>
+        <li>ADS: ${getRandomValue(sensitivityData[game].ads)}</li>
+      `;
+    }
+
+    output += `</ul>`;
+    resultDiv.innerHTML = output;
+    resultDiv.style.display = 'block';
+  });
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

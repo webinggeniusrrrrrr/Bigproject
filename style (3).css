@@ -1,0 +1,273 @@
+
+/* General Reset */
+
+*{
+margin: 0;
+padding: 0;
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font & Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  color: #222;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 100px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(to right, #000000 50%, #ffffff 50%);
+  border-radius: 30px;
+  position: relative;
+  left: -15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.icon {
+  font-size: 16px;
+  z-index: 1;
+}
+
+.sun {
+  color: #facc15;
+}
+
+.moon {
+  color: #fff;
+}
+
+/* Sliding Circle */
+.toggle-circle {
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.7s ease-in-out, background-color 0.9s;
+}
+
+body.dark-mode .toggle-circle {
+  left: 23px;
+  background-color: #000000;
+}
+
+/* Header */
+header {
+  background: linear-gradient(130deg, #302b63);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  margin-top: 80px;
+}
+
+.hero .btn {
+  background: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/* Features Section */
+.features h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Grid for Cards */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* Card */
+.card {
+  background: linear-gradient(to left, #2c5367, #203a43, #2c5367);;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  color: white;
+}
+
+
+/* Dark Mode Card Style */
+body.dark-mode .card {
+  background: grey;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #111;
+  color: #ccc;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+/* Sidebar Menu */
+.menu-icon {
+  font-size: 28px;
+  padding: 1px 10px 0px;
+  cursor: pointer;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 1001;
+  color: #fff;
+  border-radius: 0 0 6px 0;
+  transition: 0.3s ease;
+}
+
+.menu-icon.hide {
+  display: none;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  overflow-x: hidden;
+  transition: 0.7s;
+  padding-top: 70px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a:hover {
+  background-color: red;
+  transition: 0.4s;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Form Styles */
+form {
+  background: var(--card-bg, #ffffff);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: black;
+}
+
+input, select {
+  width: 80%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background-color: var(--cta, #f97316);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--cta-hover, #fb923c);
+}
+
+/* Form Dark Mode */
+body.dark-mode form {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode form label {
+  color: white;
+}
+
+   .btn22 {
+      background: #4CAF50;
+      color: white;
+      padding: 10px 16px;
+      text-align: center;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+}
